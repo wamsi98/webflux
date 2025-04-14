@@ -12,9 +12,6 @@ import lombok.RequiredArgsConstructor;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-// 현재 블로킹하게 작동중, 레포지토리는 1초씩
-// 유저정보 조회 이후에 팔로우, 아티클, 이미지를 동시에 가져오지 않고, 순차적으로 작동하기에 3초나 걸림
-// 이걸 동시성, 멀티스레딩을 이용하여 리팩토링
 @RequiredArgsConstructor
 public class UserBlockingService {
     private final UserRepository userRepository;

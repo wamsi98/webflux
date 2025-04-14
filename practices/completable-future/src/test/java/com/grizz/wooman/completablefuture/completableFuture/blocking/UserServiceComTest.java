@@ -49,21 +49,20 @@ public class UserServiceComTest {
     void testGetUser() throws ExecutionException, InterruptedException {
         // given
         String userId = "1234";
-
         // when
         Optional<User> optionalUser = userComService.getUserById(userId).get();
 
         // then
         assertFalse(optionalUser.isEmpty());
         var user = optionalUser.get();
-        assertEquals(user.getName(), "taewoo");
+        assertEquals(user.getName(), "lkm");
         assertEquals(user.getAge(), 32);
 
         assertFalse(user.getProfileImage().isEmpty());
         var image = user.getProfileImage().get();
         assertEquals(image.getId(), "image#1000");
         assertEquals(image.getName(), "profileImage");
-        assertEquals(image.getUrl(), "https://dailyone.com/images/1000");
+        assertEquals(image.getUrl(), "https://www.naver.com");
 
         assertEquals(2, user.getArticleList().size());
 
